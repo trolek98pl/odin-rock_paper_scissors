@@ -2,20 +2,21 @@ const choices = []
 choices.push("Rock", "Paper", "Scissors")
 
 let player="null";
+let computer="null"
+
 player = document.getElementById("Choice");
 player.addEventListener("change", game);
 
 function game() {
     playerChoice();
+    computerChoice();
 }
 
 function playerChoice() {
-    // if (document.getElementById("Choice") != null) {
-    //     let player = document.getElementById("Choice").value;
-    // }
-    
-    // player = player.options[player.selectedIndex].value;
+    console.log("Player choice: " + player.value);
+}
 
-    console.log(player.value);
-    // console.log("Test Console.")
+function computerChoice() {
+    computer = choices[Math.floor((Math.random() * choices.length))];
+    console.log("Computer choice: " + computer);
 }
